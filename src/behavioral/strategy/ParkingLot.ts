@@ -3,7 +3,7 @@ import Period from "./Period"
 import TicketCalculatorFactory from "./TicketCalculatorFactory"
 
 export default class ParkingLot {
-  tickets: { plate: string, checkinDate: Date }[]
+  tickets: { plate: string, checkinDate: Date, price?: number }[]
   ticketCalculator: iTicketCalculator
 
   constructor(
@@ -23,14 +23,15 @@ export default class ParkingLot {
   }
 
   checkout(plate: string, checkoutDate: Date) {
+    const ticket = this.getTicket(plate)
+    const period = new Period(ticket.checkinDate, checkoutDate)
+    ticket.price = this.ticketCalculator.calculate(period)
+  }
+
+  getTicket(plate: string) {
     const ticket = this.tickets.find(ticket => ticket.plate === plate)
     if (!ticket) throw new Error("ticket not found")
-    const period = new Period(ticket.checkinDate, checkoutDate)
-    const price = this.ticketCalculator.calculate(period)
-
-    return {
-      price
-    }
+    return ticket
   }
 }
 
