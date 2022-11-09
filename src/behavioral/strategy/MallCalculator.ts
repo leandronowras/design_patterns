@@ -1,11 +1,15 @@
 import iTicketCalculator from "./iTicketCalculator";
+import Period from "./Period";
 
 export default class MallCalculator implements iTicketCalculator {
-  calculate(checkinDate: Date, checkoutDate: Date): number {
-    const diffInHours = (checkoutDate.getTime() - checkinDate.getTime()) / (1000 * 60 * 60)
-    let price = 10
-    const remainingHours = diffInHours - 3
-    if (remainingHours > 0) price += remainingHours * 3
+  baseRate = 10
+  basePeriod = 3
+  hourlyRate = 3
+
+  calculate(period: Period): number {
+    let price = this.baseRate
+    const remainingHours = period.getDiffInHours() - this.basePeriod
+    if (remainingHours > 0) price += remainingHours * this.hourlyRate
     return price
   }
 }

@@ -1,3 +1,5 @@
+import Period from "./Period";
+
 export default interface iTicketCalculator {
-  calculate(checkinDate: Date, checkoutDate: Date): number
+  calculate(period: Period): number
 }
