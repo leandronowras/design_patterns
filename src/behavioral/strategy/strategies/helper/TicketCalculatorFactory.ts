@@ -1,7 +1,7 @@
-import AirportCalculator from "./AirportCalculator";
-import BeachCalculator from "./BeachCalculator";
-import iTicketCalculator from "./iTicketCalculator";
-import MallCalculator from "./MallCalculator";
+import AirportCalculator from "../airport/AirportCalculator";
+import BeachCalculator from "../beach/BeachCalculator";
+import iTicketCalculator from "../iTicketCalculator";
+import MallCalculator from "../mall/MallCalculator";
 
 export default class TicketCalculatorFactory {
   static create(location: string): iTicketCalculator {

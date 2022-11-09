@@ -1,6 +1,6 @@
-import iTicketCalculator from "./iTicketCalculator"
-import Period from "./Period"
-import TicketCalculatorFactory from "./TicketCalculatorFactory"
+import iTicketCalculator from "./strategies/iTicketCalculator"
+import Period from "./strategies/helper/Period"
+import TicketCalculatorFactory from "./strategies/helper/TicketCalculatorFactory"
 
 export default class ParkingLot {
   tickets: { plate: string, checkinDate: Date, price?: number }[]

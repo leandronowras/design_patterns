@@ -1,5 +1,5 @@
-import iTicketCalculator from "./iTicketCalculator";
-import Period from "./Period";
+import iTicketCalculator from "../iTicketCalculator";
+import Period from "../helper/Period";
 
 export default class BeachCalculator implements iTicketCalculator {
   hourlyRate = 5

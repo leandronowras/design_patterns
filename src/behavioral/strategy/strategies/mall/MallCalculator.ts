@@ -1,5 +1,5 @@
-import iTicketCalculator from "./iTicketCalculator";
-import Period from "./Period";
+import iTicketCalculator from "../iTicketCalculator";
+import Period from "../helper/Period";
 
 export default class MallCalculator implements iTicketCalculator {
   baseRate = 10
