@@ -1,0 +1,1 @@
+adapters para diferentes gateways de pagamento
