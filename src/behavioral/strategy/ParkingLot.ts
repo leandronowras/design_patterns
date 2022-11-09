@@ -1,15 +1,17 @@
 import iTicketCalculator from "./iTicketCalculator"
 import Period from "./Period"
+import TicketCalculatorFactory from "./TicketCalculatorFactory"
 
 export default class ParkingLot {
   tickets: { plate: string, checkinDate: Date }[]
+  ticketCalculator: iTicketCalculator
 
   constructor(
     readonly location: string,
     readonly totalSlots: number,
-    readonly ticketCalculator: iTicketCalculator
   ) {
-    this.tickets = []
+    this.tickets = [],
+    this.ticketCalculator = TicketCalculatorFactory.create(this.location)
   }
 
   getSlots() {
