@@ -9,7 +9,7 @@ export default class PaypalTransactionAdapter implements iTransaction {
   constructor(paypalTransaction: PaypalTransaction){
     this.trackNumber = paypalTransaction.id.toString(),
     this.amount = paypalTransaction.amount,
-    this.status = paypalTransaction.status
+    this.status = this.convertStatus(paypalTransaction.status)
   }
 
   convertStatus(status: string) {
