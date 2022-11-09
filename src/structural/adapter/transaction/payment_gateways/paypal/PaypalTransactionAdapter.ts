@@ -11,4 +11,17 @@ export default class PaypalTransactionAdapter implements iTransaction {
     this.amount = paypalTransaction.amount,
     this.status = paypalTransaction.status
   }
+
+  convertStatus(status: string) {
+    switch(status) {
+      case "P":
+        return "waiting_payment"
+      case "S":
+        return "paid"
+      case "F":
+        return "refunded"
+      default:
+        return ""
+    }
+  }
 }

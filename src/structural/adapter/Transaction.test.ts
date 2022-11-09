@@ -26,5 +26,5 @@ test('Should create a transaction from Paypal', () => {
   const transaction = new PaypalTransactionAdapter(paypalTransaction)
   expect(transaction.trackNumber).toBe("432342")
   expect(transaction.amount).toBe(1000)
-  expect(transaction.status).toBe("S")
+  expect(transaction.status).toBe("paid")
 })
