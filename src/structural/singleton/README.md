@@ -1,0 +1,1 @@
+caso de uso: poll de conexoes, leitura de arquivos, qualquer coisa q necessita garantir ter 1 instacia so
